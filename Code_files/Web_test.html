@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game Website</title>
+    <style>
+        /* Add your styles here */
+        .game-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-modes">
+        <button onclick="loadGameMode(1)">Game Mode 1</button>
+        <button onclick="loadGameMode(2)">Game Mode 2</button>
+        <button onclick="loadGameMode(3)">Game Mode 3</button>
+    </div>
+
+    <div id="game-container" class="game-container">
+        <!-- This container will hold the content of the selected game mode -->
+        <button onclick="goToGameModes()">Back to Game Modes</button>
+    </div>
+
+    <script>
+        function loadGameMode(gameMode) {
+            // Hide the game modes
+            const gameModesContainer = document.getElementById('game-modes');
+            gameModesContainer.style.display = 'none';
+
+            // Hide all game containers
+            hideAllGameContainers();
+
+            // Show the selected game container
+            const gameContainer = document.getElementById('game-container');
+            gameContainer.style.display = 'block';
+
+            // Load the content for the selected game mode
+            switch (gameMode) {
+                case 1:
+                    gameContainer.innerHTML = '<h2>Game Mode 1</h2><p>Content for Game Mode 1 goes here.</p>';
+                    break;
+                case 2:
+                    gameContainer.innerHTML = '<h2>Game Mode 2</h2><p>Content for Game Mode 2 goes here.</p>';
+                    break;
+                case 3:
+                    gameContainer.innerHTML = '<h2>Game Mode 3</h2><p>Content for Game Mode 3 goes here.</p>';
+                    break;
+                // Add more cases for additional game modes
+                default:
+                    break;
+            }
+
+            // Add a back button
+            const backButton = document.createElement('button');
+            backButton.textContent = 'Back to Game Modes';
+            backButton.onclick = goToGameModes;
+            gameContainer.appendChild(backButton);
+        }
+
+        function hideAllGameContainers() {
+            const gameContainers = document.querySelectorAll('.game-container');
+            gameContainers.forEach(container => {
+                container.style.display = 'none';
+            });
+        }
+
+        function goToGameModes() {
+            // Show the game modes container
+            const gameModesContainer = document.getElementById('game-modes');
+            gameModesContainer.style.display = 'flex';
+
+            // Hide the game container
+            const gameContainer = document.getElementById('game-container');
+            gameContainer.style.display = 'none';
+
+            // Clear the game container content
+            gameContainer.innerHTML = '';
+        }
+    </script>
+</body>
+</html>
