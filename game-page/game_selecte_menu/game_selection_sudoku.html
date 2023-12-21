@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuduoopo</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="game_selection_sudoku_decor.css">
+</head>
+<body>
+    <div id="scrollbar"></div>
+    <img class="logo" src="../game_image/kuduoopo-logosvg.svg" alt="logo">
+    <header class="Navbar">
+        <div class="navicon">
+            <button class="LR" onclick="navigate('left')">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <a href="../../homepage/HomePage.html"><ion-icon name="home" class="home"></ion-icon></a>
+            <a href="../../gamerules/gamerules.html"><ion-icon name="help"></ion-icon></a>
+            <a href="#"><ion-icon name="game-controller"></ion-icon></a>
+            <button class="LR" onclick="navigate('right')">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+        </div>
+    </header>
+    <div id="game-modes">
+        <div class="box1">
+            <div class="box-title-color1">
+                <div class="box-title">Normal Sudoku</div>
+            </div>
+            <div class="box-description">
+                <div class="level">Level Difficulty</div>
+                <div><ion-icon class="star" name="star"></ion-icon><ion-icon class="star" name="star"></ion-icon><ion-icon class="star" name="star"></ion-icon></div>
+                <p>This is a regular gamemode as normal sudoku should be. Choose this if you're a basic player.</p>
+                <div><button onclick="loadGameMode(1)" class="button-box2">Play</button></div>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="box-title-color2">
+                <div class="box-title">Sudoku X!</div>
+            </div>
+            <div class="box-description">
+                <div class="level">Level Difficulty</div>
+                <div><ion-icon class="star" name="star"></ion-icon><ion-icon class="star" name="star"></ion-icon><ion-icon class="star" name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
+                <p>An extra diagonal can be challenging, harder than normal sudoku, but who dares will win for the next step.</p>
+                <div><button onclick="loadGameMode(2)" class="button-box2">Play</button></div>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="box-title-color3">
+                <div class="box-title">Word Sudoku</div>
+            </div>
+            <div class="box-description">
+                <div class="level">Level Difficulty</div>
+                <div><ion-icon class="star" name="star"></ion-icon><ion-icon class="star" name="star"></ion-icon><ion-icon class="star" name="star"></ion-icon><ion-icon class="star" name="star"></ion-icon></ion-icon><ion-icon name="star-half"></ion-icon></div>
+                <p>This gamemode is for hardcore, consider this as your final judgment.<br>If you've felt ready and worthy enough, click the button to start playing.</p>
+                <div><button onclick="loadGameMode(3)" class="button-box3">Play</button></div>
+            </div>
+        </div>
+        <div class="box4">
+            <div class="box-title-color4">
+                <div class="box-title">Practice</div>
+            </div>
+            <div class="box-description">
+                <div class="level">Level Difficulty</div>
+                <div><ion-icon class="star" name="star"></ion-icon></div>
+                <p>This gamemode is for new user to practice. Try this if you are unfamiliar with sudoku.</p>
+                
+                <div><button onclick="loadGameMode(4)" class="button-box4">Play</button></div>
+            </div>
+        </div>
+    </div>
+    <div id="game-modes-below">
+        <div class="box5">
+            <div class="box-title-color5">
+                <div class="box-title">Sudoku: Color Blocks</div>
+            </div>
+            <div class="box-description">
+                <p>UNDER CONSTRUCTION, SOON WILL BE AVAILABLE! For fun and colorful, very fit for painting your sad and depressed life.</p>
+                <div><a href="../sudoku-color.html"><button class="button-box5">Check it out</button></div></a>
+            </div>
+        </div>
+
+        <div class="box6">
+            <div class="box-title-color6">
+                <div class="box-title">Pick A Random</div>
+            </div>
+            <div class="box-description">
+                <p>Don't know what to choose? Click this section and let the fate of universe decide what you play.</p>
+                <div><button onclick="randomPlay()" class="button-box6">Random</button></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="copyright">
+        &copy;2023 by ALEFED Inc. All Rights Reserved.
+        The Kudoopo Project.
+        </div>
+    </footer>
+    <script>
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop(), dh = $(document).height(), wh = $(window).height();
+            scrollPercent = (scroll / (dh-wh)) * 100;
+            $('#scrollbar').css('height', scrollPercent + '%');
+        })
+
+        function randomPlay(){
+            var random = Math.floor(Math.random()*4) + 1;
+            console.log(random);
+            loadGameMode(random);
+            console.log("random load")
+        }
+
+        function loadGameMode(gameMode) {
+            switch (gameMode) {
+                case 1:
+                    window.location.href = '../sudoku.html';
+                    break;
+                case 2:
+                    window.location.href = '../sudokuX.html'
+                    break;
+                case 3:
+                    window.location.href = '../word-sudoku.html';
+                    break;
+                case 4:
+                    window.location.href = '../mini-sudoku.html';
+                    break;
+            }
+        }
+
+
+        //HIGHLIGHT THE NAVIGATION ITEMS FUNCTION
+        document.addEventListener('DOMContentLoaded', function () {
+            const navItems = ['home', 'help', 'game-controller'];
+            let selectedNavItem = 2;
+
+            const LRIcons = document.querySelectorAll('.LR ion-icon');
+
+            LRIcons.forEach((icon, index) => {
+                icon.addEventListener('click', () => {
+                    if (index === 0) {
+                        selectedNavItem = (selectedNavItem - 1 + navItems.length) % navItems.length;
+                    } else {
+                        selectedNavItem = (selectedNavItem + 1) % navItems.length;
+                    }
+                    highlightSelectedItem();
+                    navigate();
+                });
+            });
+
+            function highlightSelectedItem() { //HIGHLIGHT THE ICON OF THE CURRENT PAGE
+                const items = document.querySelectorAll('.navicon a ion-icon');
+                items.forEach((item, index) => {
+                    if (index === selectedNavItem) { //MAKE THE ICONS BIGGER AND CHANGE ITS COLOR
+                        item.style.color = 'rgb(255, 183, 0)';
+                        item.style.transform = 'scale(1.3)';
+                    } else {
+                        item.style.color = '';
+                        item.style.transform = '';
+                    }
+                });
+            }
+
+            function navigate() { //DIRECTING TO OTHER HTML PAGE BASED ON LEFT OR RIGHT CHEVRON AFTER IT WAS CLICKED
+                const pages = ['../../homepage/HomePage.html', '../../gamerules/gamerules.html', '../game-page/game_selection_sudoku.html'];
+                const nextPage = pages[selectedNavItem];
+                window.location.href = nextPage;
+            }
+
+            highlightSelectedItem();
+        });
+
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateX(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe each box container
+        document.querySelectorAll('.box1, .box2, .box3, .box4, .box5, .box6').forEach(boxContainer => {
+            observer.observe(boxContainer);
+        });
+    </script>
+</body>
+</html>

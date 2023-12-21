@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kudoopo</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="home-decor.css">
+</head>
+<body>
+    <div id="scrollbar"></div>
+    <div class="weblogo">
+        <img src="images/Home/kuduoopo-logosvg.svg">
+    </div>
+    <header class="Navbar">
+        <div class="navicon">
+            <button class="LR" onclick="navigate('left')">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <a href="#"><ion-icon name="home" class="home"></ion-icon></a>
+            <a href="../gamerules/gamerules.html"><ion-icon name="help" onclick="test()"></ion-icon></a>
+            <a href="../game-page/game_selecte_menu/game_selection_sudoku.html"><ion-icon name="game-controller" onclick="test()"></ion-icon></a>
+            <button class="LR" onclick="navigate('right')">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+        </div>
+    </header>
+    <div class="sudoku-board" id="sudoku-board"></div>
+    <div class="welcome">
+        <h1>Welcome!</h1>
+        <h2>
+            “Another day, another Sudoku puzzle.”<br \>
+            You can check <a href="../gamerules/gamerules.html" class="herelink">here</a> for the gameplay rules
+        </h2>
+    </div>
+    <div class="playnow">
+        <h2>It's Free To Play !</h2>
+        <a href="../game-page/game_selecte_menu/game_selection_sudoku.html"><button class="buttonplay" id="playbutton">Play Now</button></a>
+    </div>
+    <div class="transition"></div>
+    <div class="about">
+        <div class="about-content reveal">
+            <h2>About This Website</h2>
+            <h3>Welcome to Kuduoopo - Your Home for Sudoku Fun!</h3>
+                <p>At Kuduoopo, we are passionate about bringing the 
+                    joy of Sudoku to enthusiasts of all levels. 
+                    Our journey began with a simple vision — to create a space 
+                    where Sudoku lovers can immerse themselves in the thrill of 
+                    solving puzzles while enjoying a seamless and engaging experience.
+                </p>
+            <h3>
+                Our Mission: Making Sudoku Accessible and Enjoyable
+            </h3>
+                <p>
+                    Our mission is clear: we strive to make Sudoku accessible to everyone, 
+                    whether you're a seasoned pro or a beginner taking your first steps into the world of number puzzles. 
+                    We believe that Sudoku is not just a game; it's a journey that sharpens your mind, boosts your logic skills, 
+                    and provides a sense of accomplishment with every solved puzzle.
+                </p>
+            <h3>
+                The Kuduoopo Story
+            </h3>
+                <p>
+                    Our website title originated from Javanese traditional language, "Kudu Opo?" which translated to "What to do?".
+                    So in order to pass the time while not knowing what to do, you can play our sudoku game to not just pass the time,
+                    but help your brain become sharper, quicker, and smarter.  "Kacang iku gurih, tapi nek dikacangin yo rasane perih." 
+                </p>
+            <h3>
+                Join Us on the Sudoku Adventure!
+            </h3>
+                <p>
+                    Whether you're here to challenge your brain, unwind after a long day, or simply enjoy 
+                    the satisfaction of solving puzzles, Kuduoopo is your go-to destination. 
+                    Join us on this Sudoku adventure, and let the numbers guide you to endless fun!
+                </p>
+
+            <p class="documentation">
+                Full Website Documentation (PDF) <ion-icon style="padding-top: 2px;" name="document-outline"></ion-icon>
+                <div style="margin-top: 0px; font-size: 18x;"><a style="text-decoration: none; color: white;" href="../../2023-網頁程式設計期末專案說明-1.pdf" target="_blank" download="kuduoopo-readme.pdf">click here</a></div>
+            </p>
+        </div>
+        <hr>
+    </div>
+    <div class="partner">
+        <h3>Our Unofficial Partners</h3>
+        <div class="partner-image">
+            <img style="margin-left: 25px;"src="images/Home/pdip-smile-01.svg">
+            <img src="images/Home/joakimprofile.jpg">
+            <img src="images/Home/lockheedmartin_white.svg">
+            <img src="images/Home/NASA-Logo-Large.png">
+            <img src="images/Home/indomaret-01.svg">
+            <img src="images/Home/gojek-01.svg">
+            <img src="images/Home/erlangga.svg">
+        </div>
+    </div>
+    <footer>
+        <div class="copyright">
+        &copy;2023 by ALEFED Inc. All Rights Reserved.
+        The Kudoopo Project.
+        </div>
+    </footer>
+<script>
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop(), dh = $(document).height(), wh = $(window).height();
+        scrollPercent = (scroll / (dh-wh)) * 100;
+        $('#scrollbar').css('height', scrollPercent + '%');
+    })
+
+    //THE SUDOKU GRID ANIMATION
+    document.addEventListener('DOMContentLoaded', function () {
+        const board = document.getElementById('sudoku-board');
+        const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+        shuffleArray(numbers);
+        updateBoard();
+
+        setInterval(() => {
+            shuffleArray(numbers);
+            updateBoard();
+        }, 6000);
+
+        function updateBoard() {
+            board.innerHTML = '';
+            for (let i = 0; i < 9; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.textContent = numbers[i];
+                board.appendChild(cell);
+
+                setTimeout(() => {
+                    cell.style.opacity = '1';
+                }, i * 200);
+            }
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+    });
+
+    //HIGHLIGHT THE NAVIGATION ITEMS FUNCTION
+    document.addEventListener('DOMContentLoaded', function () {
+            const navItems = ['home', 'help', 'game-controller'];
+            let selectedNavItem = 0;
+
+            const LRIcons = document.querySelectorAll('.LR ion-icon');
+
+            LRIcons.forEach((icon, index) => {
+                icon.addEventListener('click', () => {
+                    if (index === 0) {
+                        selectedNavItem = (selectedNavItem - 1 + navItems.length) % navItems.length;
+                    } else {
+                        selectedNavItem = (selectedNavItem + 1) % navItems.length;
+                    }
+                    highlightSelectedItem();
+                    navigate();
+                });
+            });
+
+            function highlightSelectedItem() { //HIGHLIGHT THE ICON OF THE CURRENT PAGE
+                const items = document.querySelectorAll('.navicon a ion-icon');
+                items.forEach((item, index) => {
+                    if (index === selectedNavItem) {
+                        item.style.color = 'rgb(255, 183, 0)';
+                        item.style.transform = 'scale(1.3)';
+                    } else {
+                        item.style.color = '';
+                        item.style.transform = '';
+                    }
+                });
+            }
+
+            function navigate() { //DIRECTING TO OTHER HTML PAGE BASED ON LEFT OR RIGHT CHEVRON AFTER IT WAS CLICKED
+                const pages = ['index.html', '../gamerules/gamerules.html', '../game-page/game_selecte_menu/game_selection_sudoku.html'];
+                const nextPage = pages[selectedNavItem];
+                window.location.href = nextPage;
+            }
+
+            highlightSelectedItem();
+        });
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe each box container
+        document.querySelectorAll('.about-content').forEach(boxContainer => {
+            observer.observe(boxContainer);
+        });
+
+</script>
+</body>
+</html>

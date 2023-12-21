@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuduoopo</title>
+    <link rel="stylesheet" href="gamerules-decor.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="backtotop">
+        <a href="#mainlogo">
+            <div><button title="Back To Top"><ion-icon name="arrow-up-circle-outline"></ion-icon></button></div>
+        </a>
+    </div>
+    <div id="scrollbar"></div>
+    <img class="logo" id="mainlogo" src="gamerules-image/kuduoopo-logosvg.svg">
+    <header class="Navbar">
+        <div class="navicon">
+            <button class="LR" onclick="navigate('left')">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <a href="../homepage/HomePage.html"><ion-icon name="home" class="home"></ion-icon></a>
+            <a href="#"><ion-icon name="help"></ion-icon></a>
+            <a href="../game-page/game_selecte_menu/game_selection_sudoku.html"><ion-icon name="game-controller"></ion-icon></a>
+            <button class="LR" onclick="navigate('right')">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+        </div>
+    </header>
+    <div class="header-title">
+    </div>
+    <div class="content-container">
+        <div class="main-content">
+            <h1 style="margin-left: 3%; margin-bottom: 10px; font-size: 40px;">
+                Sudoku Symphony: Unraveling the Harmony of Numbers and Logic
+            </h1>
+            <hr>
+            <img class="img1a" src="https://www.mpl.live/blog/wp-content/uploads/2021/12/sudoku-books.png">
+            <div class="section-title" id="basic">
+                The Basic Things
+            </div>
+            <p>
+                Sudoku is normally played on a grid of 9 x 9 spaces. Within the rows and columns are 9 “squares” (made up of 3 x 3 spaces). 
+                Each row, column and square (9 spaces each) needs to be filled out with the numbers 1-9, without repeating any 
+                numbers within the row, column or square. Does it sound complicated? As you can see from the image below of an 
+                actual Sudoku grid, each Sudoku grid comes with a few spaces already filled in; the more spaces filled in, the 
+                easier the game – the more difficult Sudoku puzzles have very few spaces that are already filled in.
+            </p>
+            <div class="section-title" id="psychology">
+                Need To Know: Sudoku Mental & Psychology
+            </div>
+            <p>
+                Sudoku is not just a game; it's a cognitive ballet where numbers pirouette through your mind. 
+                As you fill in those seemingly vacant cells, you engage various cognitive functions. 
+                Your working memory leaps into action, holding the puzzle's details, while your executive functions plan and strategize each move. 
+                It's a dance of logical reasoning that stimulates neural connections and enhances cognitive flexibility.
+            </p>
+            <p>
+                Beyond the numerical dance, Sudoku offers a profound sense of mindfulness. 
+                In a world buzzing with distractions, this puzzle demands your undivided attention. 
+                Each number you place requires deliberate thought, pulling you into a state of deep concentration. 
+                The focus required to solve a Sudoku puzzle acts as a mental anchor, grounding you in the present moment 
+                and fostering mindfulness.
+            </p>
+            <p>
+                Sudoku is a canvas of patterns waiting to be deciphered. Humans are pattern-seeking creatures, 
+                and Sudoku provides the perfect playground for our brains to identify, analyze, and exploit patterns. 
+                Unraveling these intricate structures not only satisfies our innate curiosity but also enhances our 
+                pattern recognition abilities, a fundamental aspect of cognitive psychology.
+            </p>
+            <p>
+                In the symphony of Sudoku, logical harmony reigns supreme. The satisfaction derived from cracking a tough puzzle 
+                triggers the release of dopamine, the brain's "feel-good" neurotransmitter. This not only creates a sense of 
+                accomplishment but also counteracts stress. Playing Sudoku becomes a therapeutic session for the mind, offering a 
+                welcome escape from the chaos of daily life.
+            </p>
+            <div class="section-title" id="fact">
+                Sudoku Fun Facts
+            </div>
+            <div class="subsection-title">
+                1. Ancient Roots of Sudoku
+            </div>
+            <p>
+                Contrary to popular belief, Sudoku isn't a modern creation. Its roots can be traced back to ancient times, 
+                specifically to the 18th-century Switzerland. An earlier version, known as Latin Squares, 
+                laid the foundation for the Sudoku we know today. It took several centuries for the puzzle to evolve into its 
+                current form, a journey that spans continents and generations. Sudoku's enduring appeal attests to the timeless 
+                allure of logical challenges.
+            </p>
+            <div class="subsection-title">
+                2. The Magic Number 6
+            </div>
+            <p>
+                Ever wondered why Sudoku grids are always 9x9? The number 9 is no arbitrary choice; it's deeply rooted in
+                the mathematical elegance of the puzzle. German mathematician Carl Friedrich Gauss discovered that any distinct
+                pair of numbers, when added together, always equals 10 in a 9x9 grid. This magic number 6 ensures the perfect symmetry
+                and balance that Sudoku enthusiasts cherish. It's a numerical ballet where each row, column, and 3x3 subgrid dances to
+                the rhythm of mathematical precision.
+            </p>
+            <div class="subsection-title">
+                3. Sudoku in Space
+            </div>
+            <p>
+                Imagine Sudoku taking a cosmic journey! In 2007, aboard Space Shuttle Endeavour, astronaut Koichi Wakata took Sudoku to new heights — literally. 
+                As part of a Japanese space experiment, Wakata played Sudoku in microgravity, proving that the universal appeal of this 
+                puzzle extends even beyond the bounds of Earth. Sudoku's gravity-defying adventure showcased its versatility as both a 
+                mental exercise and a source of entertainment, even in the vastness of space.
+            </p>
+
+            <div class="section-title" id="tutorial">
+                How To Play
+            </div>
+            <p>
+                Sudoku is a memory-training activity. Like chess, it encourages you to think a 
+                few steps ahead to your next move, which is a good exercise for the brain. 
+            </p>
+            <div style="font-weight: 600; font-size: 24px; margin-left: 3%; margin-top: 5px;">Here are a few tips that can help beginners solve sudoku puzzles:</div>
+            <div class="basic-points">
+                1. Look for the Easy Solutions<br>
+                2. Seek the Missing Numbers<br>
+                3. Keep Scanning the Entire Puzzle<br>
+                4. Constantly Re-Evaluate the Grid<br>
+                5. Be Patient and Enjoy the Hunt<br>
+            </div>
+            <br>
+            <img class="img1" src="https://store-images.s-microsoft.com/image/apps.31165.14033640835834198.3a111547-8464-4bed-bf71-f0ad50a78b8a.5a7aa2c0-04eb-483a-b01b-0bfd55a6f185?mode=scale&q=90&h=1080&w=1920">
+            <p>
+                Many puzzles will leave one or two blanks either in a line or in a box. 
+                A line might be missing a 5 and a 6, but a box along that line will 
+                already have a 6 in it, so you know this blank must be a 5, and the 
+                other blank must be the 6. The same may be the case for one or two 
+                missing numbers in the smaller boxes. Filling these blanks will get
+                you on your way to a solution.
+            </p>
+            <div class="section-title" id="othergamemodes">
+                <hr>
+                Other Gamemodes
+                <br>
+                Sudoku: X!
+                <div>
+                    <img class="img2" src="https://www.wikihow.com/images/thumb/1/1b/Play-Diagonal-Sudoku-Step-4.jpg/v4-728px-Play-Diagonal-Sudoku-Step-4.jpg.webp" alt="sudoku-X">
+                </div>
+            </div>
+            <p>
+                Sudoku is normally played on a grid of 9 x 9 spaces. Within the rows and columns are 9 “squares” (made up of 3 x 3 spaces). 
+                Each row, column and square (9 spaces each) needs to be filled out with the numbers 1-9, without repeating any 
+                numbers within the row, column or square. Does it sound complicated? As you can see from the image below of an 
+                actual Sudoku grid, each Sudoku grid comes with a few spaces already filled in; the more spaces filled in, the 
+                easier the game – the more difficult Sudoku puzzles have very few spaces that are already filled in.
+            </p>
+            <div class="subsection-title">Rules</div>
+            <p>
+                1. Each row must contain the numbers 1 to 9 without repetition.<br>
+                2. Each column must contain the numbers 1 to 9 without repetition.<br>
+                3. Each of the nine 3×3 subgrids must contain the numbers 1 to 9 without repetition.<br>
+                4. Both main diagonals must contain the numbers 1 to 9 without repetition.<br>
+            </p>
+            <div class="subsection-title">How To Play</div>
+            <p>
+                1. Start with a partially filled grid.<br>
+                2. Examine each row, column, and 3×3 subgrid to identify which numbers are missing.<br>
+                3. Use logic and deduction to fill in the missing numbers.<br>
+                4. Pay attention to the diagonals to ensure they also contain the numbers 1 to 9.<br>
+                5. Avoid repeating numbers within rows, columns, or subgrids.<br>
+            </p>
+            <div class="section-title">
+                Sudoku: Word
+                <div>
+                    <img class="img3" src="https://news.unair.ac.id/wp-content/uploads/2022/01/Foto-oleh-uanews.org_.jpg" alt="tts-koran">
+                </div>
+            </div>
+            <p>
+                Word Sudoku is a unique new word puzzle where you place a list of given words into a 9x9 grid 
+                according to Sudoku rules. The words must all be placed in the grid so that each of the nine rows, 
+                columns and blocks only contain unique letters. Words may overlap each other and each cell must 
+                contain a letter from at least one word.
+            </p>
+            <div class="subsection-title">Rules</div>
+            <p>
+                1. Each row must contain the letters of the specified word without repetition.<br>
+                2. Each column must contain the letters of the specified word without repetition.<br>
+                3. Each of the nine 3×3 subgrids must contain the letters of the specified word without repetition.<br>
+            </p>
+            <div class="subsection-title">How To Play</div>
+            <p>
+                1. Begin with a grid containing some letters of the specified word.<br>
+                2. Examine each row, column, and 3×3 subgrid to identify which letters are missing.<br>
+                3. Use logic and deduction to fill in the missing letters.<br>
+                4. Avoid repeating letters within rows, columns, or subgrids.<br>
+                5. Pay attention to the word specified and ensure it is formed correctly in each row, column, and subgrid.<br>
+            </p>
+        </div>
+
+        <div class="sidebox">
+            <h3>Topics</h3>
+            <a href="#basic">Basic</a>
+            <a href="#psychology">Need To Know</a>
+            <a href="#fact">Fun Facts</a>
+            <a href="#tutorial">How To Play</a>
+            <a href="#othergamemodes">Other Gamemodes</a>
+            <div class="memes">
+                <h3>Memes</h3>
+                <a href="https://i0.wp.com/roomescapeartist.com/wp-content/uploads/2017/12/Time-to-Commit-Sudoku.jpg?ssl=1" target="_blank"><img alt="meme-1"src="https://i0.wp.com/roomescapeartist.com/wp-content/uploads/2017/12/Time-to-Commit-Sudoku.jpg?ssl=1"></a>
+                <a href="https://i.imgflip.com/349va6.jpg" target="_blank"><img alt="meme-2" src="https://i.imgflip.com/349va6.jpg"></a>
+                <a href="https://i.chzbgr.com/full/5411634176/h883A1E40/hitler-doing-sudoko" target="_blank"><img alt="meme-3" src="https://i.chzbgr.com/full/5411634176/h883A1E40/hitler-doing-sudoko"></a>
+                <a href="https://images3.memedroid.com/images/UPLOADED170/5727381d5372f.jpeg" target="_blank"><img class="meme-4" alt="meme-4" src="https://images3.memedroid.com/images/UPLOADED170/5727381d5372f.jpeg"></a>
+                <a href="https://i.pinimg.com/236x/a0/d0/51/a0d05121ed1e55d893754c13449d7e5e.jpg" target="_blank"><img class="meme-5" alt="meme-5" src="https://i.pinimg.com/236x/a0/d0/51/a0d05121ed1e55d893754c13449d7e5e.jpg"></a>
+                <a href="https://miro.medium.com/v2/resize:fit:640/0*utskdOdQIaObEjXR.jpg" target="_blank"><img class="meme-6" alt="meme-6" src="https://miro.medium.com/v2/resize:fit:640/0*utskdOdQIaObEjXR.jpg"></a>
+            </div>
+            <!-- <div class="box" id="content1">
+                <p><span class="gamemode-name"> Normal Sudoku.</span> <p class="preview">As normal as it is.</p></p>
+                <button class="read-more-btn" onclick="toggleContent('paragraph1')">Read More</button>
+            </div>
+            <div class="box" id="content2">
+                <p><span class="gamemode-name"> Mini Sudoku.</span> <p class="preview">So small, some people think it's cute.</p></p>
+                <button class="read-more-btn" onclick="toggleContent('paragraph2')">Read More</button>
+            </div>
+            <div class="box" id="content3">
+                <p><span class="gamemode-name"> Sudoku X!</span> <p class="preview">A tiny bit of diagonal can be challenging.</p></p>
+                <button class="read-more-btn" onclick="toggleContent('paragraph3')">Read More</button>
+            </div> -->
+        </div>
+    </div>
+    <footer>
+        <div class="copyright">
+        <p>
+            &copy;2023 by ALEFED Inc. All Rights Reserved.
+            The Kudoopo Project.
+        </p>
+        </div>
+    </footer>
+</body>
+<script>
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop(), dh = $(document).height(), wh = $(window).height();
+        scrollPercent = (scroll / (dh-wh)) * 100;
+        $('#scrollbar').css('height', scrollPercent + '%');
+    })
+
+    //HIGHLIGHT THE NAVIGATION ITEMS FUNCTION
+    document.addEventListener('DOMContentLoaded', function () {
+            const navItems = ['home', 'help', 'game-controller'];
+            let selectedNavItem = 1;
+
+            const LRIcons = document.querySelectorAll('.LR ion-icon');
+
+            LRIcons.forEach((icon, index) => {
+                icon.addEventListener('click', () => {
+                    if (index === 0) {
+                        selectedNavItem = (selectedNavItem - 1 + navItems.length) % navItems.length;
+                    } else {
+                        selectedNavItem = (selectedNavItem + 1) % navItems.length;
+                    }
+                    highlightSelectedItem();
+                    navigate();
+                });
+            });
+
+            function highlightSelectedItem() { //HIGHLIGHT THE ICON OF THE CURRENT PAGE
+                const items = document.querySelectorAll('.navicon a ion-icon');
+                items.forEach((item, index) => {
+                    if (index === selectedNavItem) {
+                        item.style.color = 'rgb(255, 183, 0)';
+                        item.style.transform = 'scale(1.3)';
+                    } else {
+                        item.style.color = '';
+                        item.style.transform = '';
+                    }
+                });
+            }
+
+            function navigate() { //DIRECTING TO OTHER HTML PAGE BASED ON LEFT OR RIGHT CHEVRON AFTER IT WAS CLICKED
+                const pages = ['../homepage/HomePage.html', '../gamerules/gamerules.html', '../game-page/game_selecte_menu/game_selection_sudoku.html'];
+                const nextPage = pages[selectedNavItem];
+                window.location.href = nextPage;
+            }
+
+            highlightSelectedItem();
+        });
+
+        // function toggleContent(contentId) {
+        //     const content = document.getElementById(contentId);
+
+        //     // Toggle the opacity and transform for the full content
+        //     content.classList.toggle("full-content");
+        // }
+
+        document.addEventListener('DOMContentLoaded', function () {
+        var backToTopButton = document.getElementById('backtotop');
+
+        window.addEventListener('scroll', function () {
+            // Adjust the scroll threshold as needed
+            if (window.scrollY > 850) {
+                backToTopButton.style.visibility = 'visible';
+            } else {
+                backToTopButton.style.visibility = 'hidden';
+            }
+        });
+    });
+
+
+
+</script>
+</html>

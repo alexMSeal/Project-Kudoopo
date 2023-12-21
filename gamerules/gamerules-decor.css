@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    background-image: url(gamerules-image/wallpaper3.svg);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    color: white;
+    padding-top: 10px;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    background-color: rgb(237, 98, 255);
+    width: 300px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    top: -10px;
+}
+
+.Navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.logo{
+    display: block;
+    width: 50%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -20px;
+}
+
+.welcome {
+    margin: 20px;
+    text-align: center;
+}
+
+.header-title {
+   text-align: center;
+}
+
+.playnow {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navicon {
+display: flex;
+align-items: center; 
+  }
+
+.navicon a ion-icon{
+    margin-top: 5px;
+    font-size: 25px;
+    align-items: center;
+}
+
+.navicon a ion-icon:hover, .LR:hover ion-icon {
+    color: rgb(255, 183, 0);
+    transform: scale(1.3);
+}
+
+.LR {
+    align-content: center;
+    margin-bottom: 5px;
+    font-size: 18px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border: none; 
+    background: none; 
+    cursor: pointer;
+}
+
+.LR ion-icon {
+    margin-top: 10px;
+    color: white;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.LR:hover ion-icon {
+    color: rgb(255, 183, 0);
+    transform: scale(1.3);
+}
+
+.box {
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    color: #7148ed;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: scroll;
+    max-height: 100px; /* Adjust the max height as needed */
+    max-width: 250px; /* Set the width as needed */
+    min-width: 150px;
+    text-align: left;
+}
+
+.full-content {
+    max-height: none !important; /* Override max-height for full content */
+}
+
+.read-more-btn {
+    cursor: pointer;
+    color: blue;
+}
+
+.gamemode-name{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.main-content hr{
+    width: 80%;
+    margin-left: 3%;
+    margin-top: 0px;
+    color: white;
+    border: white 2px solid;
+}
+
+.img1{
+    width: 70%;
+    margin-top: 10px;
+    position: relative;
+    margin-left: 3%;
+    margin-bottom: 10px;
+}
+
+.img1a{
+    width: 80%;
+    height: 250px;
+    margin-top: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    margin-left: 3%;
+    object-fit: cover;
+    object-position: center 60%;
+}
+
+
+.img2{
+    width: 50%;
+    height: 300px;
+    margin-top: 10px;
+    position: relative;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    border: white 5px solid;
+    object-fit: cover;
+    object-position: center 80%;
+}
+
+.img3{
+    width: 80%;
+    height: 150px;
+    margin-top: 10px;
+    position: relative;
+    object-fit: cover;
+    object-position: center 40%;
+}
+
+.main-content p{
+    text-align: left;
+    margin-left: 3%;
+    margin-bottom: 3%;
+    margin-right: 3%;
+    margin-top: 0px;
+    font-size: 18px;
+}
+
+.section-title{
+    font-size: 36px; 
+    margin-bottom: 0%; 
+    font-weight: 800; 
+    margin-left: 3%;
+}
+
+.section-title hr{
+    width: 70%;
+    margin-left: 1px;
+    color: white;
+    border: white 2px solid;
+}
+
+.subsection-title{
+    margin-left: 3%;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.basic-points{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 3%;
+    margin-top: 5px;
+}
+
+.main-content{
+    position: relative;
+    max-width: 60%;
+    margin-left: 15%;
+    overflow-y: auto;
+    max-height: 4200px;
+}
+
+.content-container {
+    width: 100%;
+    height: 4000px;
+    background-color: #7148ed;
+    position: relative;
+    display: flex;
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+    opacity: 0.9;
+}
+
+.sidebox{
+    height: 4000px;
+    max-width: 300px;
+    min-width: 160px;
+    display: flex;
+    padding: 15px 0px 0px 15px;
+    flex-direction: column;
+    background-color: #411d8a;
+}
+
+.sidebox h3{
+    font-size: 20px;
+    color: white;
+}
+
+.sidebox a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.sidebox ion-icon{
+    color: white;
+    font-size: 50px;
+}
+.memes{
+    margin-top: 40px;
+}
+
+.memes img{
+    max-width: 280px;
+    object-fit: cover;
+    object-position: center 80%;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.meme-5{
+    width: 110%;
+}
+
+#backtotop {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 99;
+    visibility: hidden;
+    margin-right: 25px;
+}
+
+#backtotop a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+#backtotop button {
+    text-decoration: none;
+    border: none;
+    background: none;
+}
+
+#backtotop button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+#backtotop ion-icon {
+    color: white;
+    font-size: 50px;
+}
+
+footer {
+    margin-top: 0px;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    background-color: rgb(13, 0, 85);
+    color: white;
+    opacity: 0.80;
+}
+
+.copyright p{
+    text-align: center;
+    margin-top: 27px;
+}
+
+
+/*Scroll bar customization*/
+::-webkit-scrollbar{
+    width: 0px;
+}
+
+#scrollbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 15px;
+    border-radius: 10px;
+    background: linear-gradient(to top, #9f72f8, #763dc7);
+    z-index: 10;
+    opacity: 0.65;
+}
