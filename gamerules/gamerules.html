@@ -22,7 +22,7 @@
             <button class="LR" onclick="navigate('left')">
                 <ion-icon name="chevron-back-outline"></ion-icon>
             </button>
-            <a href="../homepage/HomePage.html"><ion-icon name="home" class="home"></ion-icon></a>
+            <a href="../index.html"><ion-icon name="home" class="home"></ion-icon></a>
             <a href="#"><ion-icon name="help"></ion-icon></a>
             <a href="../game-page/game_selecte_menu/game_selection_sudoku.html"><ion-icon name="game-controller"></ion-icon></a>
             <button class="LR" onclick="navigate('right')">
@@ -273,7 +273,7 @@
             }
 
             function navigate() { //DIRECTING TO OTHER HTML PAGE BASED ON LEFT OR RIGHT CHEVRON AFTER IT WAS CLICKED
-                const pages = ['../homepage/HomePage.html', '../gamerules/gamerules.html', '../game-page/game_selecte_menu/game_selection_sudoku.html'];
+                const pages = ['../index.html', '../gamerules/gamerules.html', '../game-page/game_selecte_menu/game_selection_sudoku.html'];
                 const nextPage = pages[selectedNavItem];
                 window.location.href = nextPage;
             }
