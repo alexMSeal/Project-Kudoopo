@@ -4,8 +4,10 @@ https://github.com/alexMSeal/Project-Kuduoopo.git
 GitHub live demo server:
 https://alexmseal.github.io/Project-Kuduoopo/ 
 
+Web demo video link:
+https://drive.google.com/file/d/1-lNvSFOaxacwAUVtYfb7h-x8tGKI5xWH/view?usp=sharing
 
-Web Preview:
+Web Screenshot Preview:
 ![image](https://github.com/alexMSeal/Project-Kuduoopo/assets/151509244/a3cdd0a3-a7db-4386-a58a-d9edd830dfff)
 ![image](https://github.com/alexMSeal/Project-Kuduoopo/assets/151509244/4566804c-f3c2-436f-9ff1-214e4c317e0b)
 ![image](https://github.com/alexMSeal/Project-Kuduoopo/assets/151509244/2f507600-8e2d-47be-b7e8-8c72262ecd56)
@@ -17,5 +19,5 @@ Web Preview:
 
 Language used:
 1. HTML
-2. CSS (Doodle)
+2. CSS (basic & Doodle library)
 3. Javascript (Event, DOM, AJAX, jQuery)
